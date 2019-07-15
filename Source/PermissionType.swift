@@ -87,6 +87,8 @@ public enum PermissionType {
     #if PERMISSION_SIRI
     @available(iOS 10.0, *) case siri
     #endif
+    
+    case unknown
 }
 
 extension PermissionType: CustomStringConvertible {
