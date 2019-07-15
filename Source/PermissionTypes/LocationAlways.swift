@@ -37,7 +37,7 @@ internal extension Permission {
             return UserDefaults.standard.requestedLocationAlwaysWithWhenInUse ? .denied : .notDetermined
         case .notDetermined: return .notDetermined
         case .restricted, .denied: return .denied
-        @unknown default:          return .denied
+        @unknown default: return .denied
         }
     }
     
@@ -51,7 +51,8 @@ internal extension Permission {
             UserDefaults.standard.requestedLocationAlwaysWithWhenInUse = true
         }
         
-        LocationManager.request(self)
+        LocationManager = CLLocationManager()
+        LocationManager?.request(self)
     }
 }
 #endif
