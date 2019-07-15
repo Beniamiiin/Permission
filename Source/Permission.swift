@@ -22,6 +22,10 @@
 // SOFTWARE.
 //
 
+#if PERMISSION_USER_NOTIFICATIONS
+import UserNotifications
+#endif
+
 open class Permission: NSObject {
     public typealias Callback = (PermissionStatus) -> Void
 
@@ -132,6 +136,27 @@ open class Permission: NSObject {
     }
     #endif
     
+    #if PERMISSION_USER_NOTIFICATIONS
+    /// Variable used to retain the notifications permission.
+    @available(iOS 10.0, *)
+    fileprivate static var _userNotifications: Permission?
+    
+    /// The permission to send notifications.
+    @available(iOS 10.0, *)
+    public static let userNotifications: Permission = {
+        let settings: UNAuthorizationOptions = [.alert, .badge, .sound]
+        _userNotifications = Permission(type: .userNotifications(settings))
+        return _userNotifications!
+    }()
+    
+    /// The permission to send notifications.
+    @available(iOS 10.0, *)
+    public static func userNotifications(options: UNAuthorizationOptions) -> Permission {
+        _userNotifications = Permission(type: .userNotifications(options))
+        return _userNotifications!
+    }
+    #endif
+    
     /// The permission domain.
     public let type: PermissionType
     
@@ -152,6 +177,10 @@ open class Permission: NSObject {
         
         #if PERMISSION_NOTIFICATIONS
         if case .notifications = type { return statusNotifications }
+        #endif
+        
+        #if PERMISSION_USER_NOTIFICATIONS
+        if case .userNotifications = type { return statusUserNotifications }
         #endif
         
         #if PERMISSION_MICROPHONE
@@ -274,7 +303,7 @@ open class Permission: NSObject {
         #endif
         
         #if PERMISSION_LOCATION
-        if case .locationAlways    = type {
+        if case .locationAlways = type {
             requestLocationAlways(callback)
             return
         }
@@ -288,6 +317,13 @@ open class Permission: NSObject {
         #if PERMISSION_NOTIFICATIONS
         if case .notifications = type {
             requestNotifications(callback)
+            return
+        }
+        #endif
+        
+        #if PERMISSION_USER_NOTIFICATIONS
+        if case .userNotifications = type {
+            requestUserNotifications(callback)
             return
         }
         #endif

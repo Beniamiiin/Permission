@@ -33,6 +33,7 @@
 		6DF9C2BE1C8F4FE5000710C1 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9C2BD1C8F4FE5000710C1 /* Photos.swift */; };
 		6DF9C2C01C8F5003000710C1 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9C2BF1C8F5003000710C1 /* Events.swift */; };
 		6DF9C2C61C8F5B4C000710C1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9C2C51C8F5B4C000710C1 /* Location.swift */; };
+		C2BB535A22DC5D2F00E6F830 /* UserNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BB535922DC5D2F00E6F830 /* UserNotifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		6DF9C2BD1C8F4FE5000710C1 /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		6DF9C2BF1C8F5003000710C1 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		6DF9C2C51C8F5B4C000710C1 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		C2BB535922DC5D2F00E6F830 /* UserNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotifications.swift; sourceTree = "<group>"; };
 		D08FF2891DC3AD2900F28088 /* PermissionFlags.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PermissionFlags.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +156,7 @@
 				6DF9C2B91C8F4FAC000710C1 /* Microphone.swift */,
 				6D935F5E1C9A14AB00BB39E3 /* Motion.swift */,
 				6DF9C2B71C8F4F8F000710C1 /* Notifications.swift */,
+				C2BB535922DC5D2F00E6F830 /* UserNotifications.swift */,
 				6DF9C2BD1C8F4FE5000710C1 /* Photos.swift */,
 				6DF9C2B51C8F4F69000710C1 /* Reminders.swift */,
 				3F21DC7C1E30B6DB00B3EF65 /* Siri.swift */,
@@ -303,6 +306,7 @@
 				6DF9C2C01C8F5003000710C1 /* Events.swift in Sources */,
 				6DF9C2B61C8F4F69000710C1 /* Reminders.swift in Sources */,
 				6DF9C2AF1C8F4F2A000710C1 /* Contacts.swift in Sources */,
+				C2BB535A22DC5D2F00E6F830 /* UserNotifications.swift in Sources */,
 				6DF9C2C61C8F5B4C000710C1 /* Location.swift in Sources */,
 				3F21DC7E1E30E0B900B3EF65 /* Siri.swift in Sources */,
 				6DA8B4B21BFB8AD8007A94FC /* PermissionAlert.swift in Sources */,
